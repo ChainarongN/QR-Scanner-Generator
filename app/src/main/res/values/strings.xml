@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">QR Scanner &amp; Generator</string>
+
+
+
+    <string name="Profile">Profile</string>
+    <string name="Business">Business</string>
+    <string name="Email">Email</string>
+    <string name="Website">Text / Website</string>
+    <string name="Contact">Contact</string>
+    <string name="Message">Message</string>
 </resources>
