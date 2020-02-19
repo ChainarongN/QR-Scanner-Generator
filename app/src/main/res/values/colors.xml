@@ -6,4 +6,7 @@
     <color name="colorAccent">#ff33b5e5</color>
     <color name="bg_soft">#ccffff</color>
     <color name="bg_item">#e6ffff</color>
+
+    <color name="color_white">#FDFEFE</color>
+    <color name="color_black">#17202A</color>
 </resources>
