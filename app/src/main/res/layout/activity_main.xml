@@ -19,6 +19,7 @@
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
         app:itemIconSize="24dp"
+        app:itemBackground="@color/bg_item"
         app:itemIconTint="@color/bottom_nav_item_color"
         app:itemTextAppearanceActive="@style/BottomNavigationView.TextAppearance.Active"
         app:itemTextAppearanceInactive="@style/BottomNavigationView.TextAppearance.InActive"

@@ -2,8 +2,10 @@ package com.example.qrscannergenerator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -15,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Navigation Bar Color
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this, R.color.color_black));
+        }
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -36,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_home:
                             selectedFragment = new HomeFragment();
                             break;
-                        case R.id.nav_favorites:
-                            selectedFragment = new FavoritesFragment();
+                        case R.id.nav_scanner:
+                            selectedFragment = new ScannerFragment();
                             break;
-                        case R.id.nav_search:
-                            selectedFragment = new SearchFragment();
+                        case R.id.nav_rate_us:
+                            selectedFragment = new RateUsFragment();
                             break;
                     }
 
