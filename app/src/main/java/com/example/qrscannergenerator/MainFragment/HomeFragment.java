@@ -1,4 +1,4 @@
-package com.example.qrscannergenerator;
+package com.example.qrscannergenerator.MainFragment;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.example.qrscannergenerator.R;
 
 public class HomeFragment extends Fragment {
 

@@ -9,6 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.qrscannergenerator.MainFragment.HomeFragment;
+import com.example.qrscannergenerator.MainFragment.RateUsFragment;
+import com.example.qrscannergenerator.MainFragment.ScannerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
