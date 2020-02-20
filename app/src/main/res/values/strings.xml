@@ -2,11 +2,15 @@
     <string name="app_name">QR Scanner &amp; Generator</string>
 
 
-
     <string name="Profile">Profile</string>
     <string name="Business">Business</string>
     <string name="Email">Email</string>
     <string name="Website">Text / Website</string>
     <string name="Contact">Contact</string>
     <string name="Message">Message</string>
+
+    <string name="data">Data QR Code</string>
+    <string name="scanNew">Scan new</string>
+    <string name="image">Image</string>
+    <string name="share">Share</string>
 </resources>
