@@ -11,6 +11,11 @@
 
     <string name="data">Data QR Code</string>
     <string name="scanNew">Scan new</string>
-    <string name="image">Image</string>
+    <string name="image">Scan Image</string>
     <string name="share">Share</string>
+    <string name="copy">Copy</string>
+
+
+    <string name="alert_btn">Please scan qr code or select image</string>
+    <string name="text_message">Please click at Scan new \n or  click Scan image</string>
 </resources>
