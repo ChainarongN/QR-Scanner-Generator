@@ -35,7 +35,9 @@ public class FirstActivity extends AppCompatActivity {
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 },
                 5000);
