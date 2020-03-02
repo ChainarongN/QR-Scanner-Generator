@@ -9,7 +9,7 @@
     <string name="Contact">Contact</string>
     <string name="Message">Message</string>
 
-    <string name="data">Data QR Code</string>
+    <string name="data">Result QR Code</string>
     <string name="scanNew">Scan new</string>
     <string name="image">Scan Image</string>
     <string name="share">Share</string>

@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bg_soft">
+    android:background="@color/bg_soft"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
@@ -30,7 +30,7 @@
                 android:text="@string/data"
                 android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <ScrollView
@@ -50,13 +50,10 @@
                         android:layout_height="wrap_content"
                         android:text="@string/text_message"
                         android:textColor="#000"
-                        android:textSize="18dp" />
-
+                        android:textSize="16sp" />
 
                 </LinearLayout>
-
             </ScrollView>
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -78,7 +75,7 @@
             android:background="@drawable/hover_bg1_bg2"
             android:text="@string/scanNew"
             android:textColor="@color/color_white"
-            android:textSize="10dp" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btn_image"
@@ -89,7 +86,7 @@
             android:background="@drawable/hover_bg1_bg2"
             android:text="@string/image"
             android:textColor="@color/color_white"
-            android:textSize="10dp" />
+            android:textSize="12sp" />
 
 
     </LinearLayout>
@@ -107,10 +104,10 @@
             android:layout_height="36dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textSize="10dp"
             android:background="@drawable/hover_bg5_bg2"
             android:text="@string/copy"
-            android:textColor="@color/color_white" />
+            android:textColor="@color/color_white"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btn_share"
@@ -118,10 +115,10 @@
             android:layout_height="36dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textSize="10dp"
             android:background="@drawable/hover_bg3_bg2"
             android:text="@string/share"
-            android:textColor="@color/color_white" />
+            android:textColor="@color/color_white"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
