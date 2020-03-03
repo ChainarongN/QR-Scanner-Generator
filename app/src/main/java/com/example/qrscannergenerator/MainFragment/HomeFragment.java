@@ -1,5 +1,6 @@
 package com.example.qrscannergenerator.MainFragment;
 
+import android.app.ActionBar;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
         gridLayout = (GridLayout) v.findViewById(R.id.mainGrid);
         setSingleEvent(gridLayout);
 
+        getActivity().setTitle("Generator");
 //        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            getActivity().getWindow().setNavigationBarColor(ContextCompat.getColor(getContext(), R.color.bg_item));
 //        }

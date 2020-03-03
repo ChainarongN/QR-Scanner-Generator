@@ -74,6 +74,7 @@ public class ScannerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_scanner, container, false);
+        getActivity().setTitle("Scanner");
         result_qr = (TextView) v.findViewById(R.id.result_qr);
         btn_scanNew = (Button) v.findViewById(R.id.btn_scanNew);
         btn_image = (Button) v.findViewById(R.id.btn_image);
@@ -200,7 +201,9 @@ public class ScannerFragment extends Fragment {
                     Uri selectedImage = imageReturnedIntent.getData();
                     InputStream imageStream = null;
                     try {
-                        imageStream = getActivity().getContentResolver().openInputStream(selectedImage);
+                        if (selectedImage != null) {
+                            imageStream = getActivity().getContentResolver().openInputStream(selectedImage);
+                        }
                         Bitmap bMap = BitmapFactory.decodeStream(imageStream);
                         String contents = null;
 
