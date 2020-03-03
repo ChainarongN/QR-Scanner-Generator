@@ -153,25 +153,21 @@ public class ScannerFragment extends Fragment {
                 myClip = ClipData.newPlainText("text", result_qr.getText().toString());
                 myClipboard.setPrimaryClip(myClip);
 
-                AlertDialog.Builder builder_copy = new AlertDialog.Builder(getActivity());
-                builder_copy.setTitle("Result");
-                builder_copy.setIcon(R.mipmap.ic_launcher);
-                builder_copy.setMessage("Copy success");
-                AlertDialog alert_copy = builder_copy.create();
-                alert_copy.setButton(DialogInterface.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do something
-                    }
-                });
-                alert_copy.setCanceledOnTouchOutside(false);
-                alert_copy.show();
+                Toast.makeText(getContext(), "Copy success", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void share_btn() {
-
+        btn_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, result_qr.getText().toString());
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
     }
 
     private void check_btn() {
