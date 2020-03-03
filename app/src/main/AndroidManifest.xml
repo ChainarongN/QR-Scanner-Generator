@@ -15,6 +15,12 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Generator.ContactActivity"></activity>
+        <activity android:name=".Generator.TextActivity" />
+        <activity android:name=".Generator.MessageActivity" />
+        <activity android:name=".Generator.EmailActivity" />
+        <activity android:name=".Generator.BusinessActivity" />
+        <activity android:name=".Generator.ProfileActivity" />
         <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +32,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
