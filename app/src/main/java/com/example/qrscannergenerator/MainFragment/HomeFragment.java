@@ -1,6 +1,7 @@
 package com.example.qrscannergenerator.MainFragment;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +16,14 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.qrscannergenerator.Generator.BusinessActivity;
+import com.example.qrscannergenerator.Generator.ContactActivity;
+import com.example.qrscannergenerator.Generator.EmailActivity;
+import com.example.qrscannergenerator.Generator.MessageActivity;
+import com.example.qrscannergenerator.Generator.ProfileActivity;
+import com.example.qrscannergenerator.Generator.TextActivity;
 import com.example.qrscannergenerator.R;
+import com.example.qrscannergenerator.ScanCodeActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -54,8 +62,27 @@ public class HomeFragment extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "Clicked at index " + finalI,
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "Clicked at index " + finalI,
+//                            Toast.LENGTH_SHORT).show();
+
+                    if (finalI == 0){
+                        startActivity(new Intent(getContext(), ProfileActivity.class));
+                    }
+                    if (finalI == 1){
+                        startActivity(new Intent(getContext(), BusinessActivity.class));
+                    }
+                    if (finalI == 2){
+                        startActivity(new Intent(getContext(), EmailActivity.class));
+                    }
+                    if (finalI == 3){
+                        startActivity(new Intent(getContext(), MessageActivity.class));
+                    }
+                    if (finalI == 4){
+                        startActivity(new Intent(getContext(), TextActivity.class));
+                    }
+                    if (finalI == 5){
+                        startActivity(new Intent(getContext(), ContactActivity.class));
+                    }
                 }
             });
         }

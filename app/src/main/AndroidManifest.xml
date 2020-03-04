@@ -15,12 +15,12 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Generator.ContactActivity"></activity>
-        <activity android:name=".Generator.TextActivity" />
-        <activity android:name=".Generator.MessageActivity" />
-        <activity android:name=".Generator.EmailActivity" />
-        <activity android:name=".Generator.BusinessActivity" />
-        <activity android:name=".Generator.ProfileActivity" />
+        <activity android:name=".Generator.ContactActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Generator.TextActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Generator.MessageActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Generator.EmailActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Generator.BusinessActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Generator.ProfileActivity" android:parentActivityName=".MainActivity" />
         <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
