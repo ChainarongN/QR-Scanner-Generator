@@ -30,7 +30,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
-//        getActivity().setTitle("Profile");
+        getActivity().setTitle("Profile");
 
         name = (EditText) v.findViewById(R.id.edt_name);
         nickname = (EditText) v.findViewById(R.id.edt_nickname);
