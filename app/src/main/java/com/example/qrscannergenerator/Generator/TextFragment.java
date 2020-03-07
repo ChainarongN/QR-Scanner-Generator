@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -25,7 +26,7 @@ public class TextFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v =  inflater.inflate(R.layout.fragment_text, container, false);
+        v = inflater.inflate(R.layout.fragment_text, container, false);
         getActivity().setTitle("Text / Website");
 
         text = (EditText) v.findViewById(R.id.text);
@@ -39,10 +40,13 @@ public class TextFragment extends Fragment {
                     s.append("Text : " + text.getText().toString().trim() + "\n" + "\n");
                 }
 
-//                Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getContext(), GeneratorActivity.class);
-                intent.putExtra("Value", s.toString());
-                startActivity(intent);
+                if (s.toString().equals("")) {
+                    Toast.makeText(getContext(), "Please enter information", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(getContext(), GeneratorActivity.class);
+                    intent.putExtra("Value", s.toString());
+                    startActivity(intent);
+                }
             }
         });
 

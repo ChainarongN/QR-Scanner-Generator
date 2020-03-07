@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -63,10 +64,14 @@ public class BusinessFragment extends Fragment {
                     s.append("Website : " + website.getText().toString().trim());
                 }
 
-//                Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getContext(), GeneratorActivity.class);
-                intent.putExtra("Value", s.toString());
-                startActivity(intent);
+                if (s.toString().equals("")) {
+                    Toast.makeText(getContext(),"Please enter information",Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(getContext(), GeneratorActivity.class);
+                    intent.putExtra("Value", s.toString());
+                    startActivity(intent);
+                }
+
             }
         });
 

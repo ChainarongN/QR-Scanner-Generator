@@ -67,10 +67,13 @@ public class ProfileFragment extends Fragment {
                     s.append("Website : " + website.getText().toString().trim());
                 }
 
-//                Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getContext(), GeneratorActivity.class);
-                intent.putExtra("Value", s.toString());
-                startActivity(intent);
+                if (s.toString().equals("")) {
+                    Toast.makeText(getContext(), "Please enter information", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(getContext(), GeneratorActivity.class);
+                    intent.putExtra("Value", s.toString());
+                    startActivity(intent);
+                }
             }
         });
 
