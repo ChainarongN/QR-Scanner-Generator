@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Generator.ProfileActivity">
+    tools:context=".Generator.ProfileFragment">
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -47,10 +48,11 @@
                         android:hint="Name">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_name_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,10 +63,11 @@
                         android:hint="Nickname">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_nickname_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,13 +75,14 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Jub title">
+                        android:hint="Job title">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_jobTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_job_title_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,10 +93,11 @@
                         android:hint="Phone number">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_phoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_phone_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,10 +108,11 @@
                         android:hint="Email">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_email_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,10 +123,11 @@
                         android:hint="Address">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_address_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,10 +138,11 @@
                         android:hint="Website">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_website"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_favorite_black_24dp"
+                            android:drawableStart="@drawable/ic_web_site_24dp"
                             android:drawablePadding="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -145,7 +153,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/btn_scanNew"
+        android:id="@+id/btn_generate"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_below="@+id/cardView"

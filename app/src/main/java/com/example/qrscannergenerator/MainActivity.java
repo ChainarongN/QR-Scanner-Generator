@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Navigation Bar Color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this, R.color.color_black));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this, R.color.bg_item));
         }
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
