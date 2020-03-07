@@ -29,6 +29,9 @@ import android.widget.Toast;
 
 import com.example.qrscannergenerator.Generator.TextFragment;
 import com.example.qrscannergenerator.MainFragment.HomeFragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.zxing.WriterException;
 
 import java.io.File;

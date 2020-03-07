@@ -17,6 +17,9 @@ import android.widget.Toast;
 import com.example.qrscannergenerator.MainFragment.HomeFragment;
 import com.example.qrscannergenerator.MainFragment.RateUsFragment;
 import com.example.qrscannergenerator.MainFragment.ScannerFragment;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayShowHomeEnabled(true);
         // Check Permission for Camera
@@ -65,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_scanner:
                             selectedFragment = new ScannerFragment();
                             break;
-                        case R.id.nav_rate_us:
-                            selectedFragment = new RateUsFragment();
-                            break;
+//                        case R.id.nav_rate_us:
+//                            selectedFragment = new RateUsFragment();
+//                            break;
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

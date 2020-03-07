@@ -19,6 +19,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.qrscannergenerator.GeneratorActivity;
 import com.example.qrscannergenerator.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class ProfileFragment extends Fragment {
 
@@ -26,11 +30,18 @@ public class ProfileFragment extends Fragment {
     EditText name, nickname, job, phone, email, address, website;
     Button btn_generate;
 
+    private AdView mAdView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         getActivity().setTitle("Profile");
+
+        mAdView = v.findViewById(R.id.adView);
+        MobileAds.initialize(getContext(),"ca-app-pub-8182151086528694~1250153017");
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         name = (EditText) v.findViewById(R.id.edt_name);
         nickname = (EditText) v.findViewById(R.id.edt_nickname);
