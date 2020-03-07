@@ -48,6 +48,17 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/hover_bg5_bg2"
+                android:text="back to menu"
+                android:textColor="@color/color_white"
+                android:textSize="12sp" />
+
+            <Button
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
@@ -58,36 +69,6 @@
                 android:textColor="@color/color_white"
                 android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/btn_share"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/hover_bg1_bg2"
-                android:text="Share"
-                android:textColor="@color/color_white"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_back"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/hover_bg5_bg2"
-                android:text="back to menu"
-                android:textColor="@color/color_white"
-                android:textSize="12sp"
-                tools:ignore="InefficientWeight" />
         </LinearLayout>
 
     </LinearLayout>
