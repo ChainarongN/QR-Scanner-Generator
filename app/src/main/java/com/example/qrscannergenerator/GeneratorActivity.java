@@ -1,11 +1,20 @@
 package com.example.qrscannergenerator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -19,18 +28,24 @@ import com.example.qrscannergenerator.Generator.TextFragment;
 import com.example.qrscannergenerator.MainFragment.HomeFragment;
 import com.google.zxing.WriterException;
 
+import java.io.File;
+
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidmads.library.qrgenearator.QRGSaver;
 
 public class GeneratorActivity extends AppCompatActivity {
+    private Context mContext = GeneratorActivity.this;
+    private static final int REQUEST = 112;
     String TAG = "GenerateQRCode";
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
-    String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
+    String ImagePath;
+    Uri URI;
 
     ImageView img;
     Button btnSave, btnShare, btnBack;
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +56,7 @@ public class GeneratorActivity extends AppCompatActivity {
         btnShare = (Button) findViewById(R.id.btn_share);
         btnBack = (Button) findViewById(R.id.btn_back);
 
-        final String text = getIntent().getExtras().getString("Value");
+        text = getIntent().getExtras().getString("Value");
 
         if (text != null && !text.equals("")) {
             WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
@@ -75,14 +90,19 @@ public class GeneratorActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean saved;
-                String result;
-                try {
-                    saved = QRGSaver.save(savePath, text, bitmap, QRGContents.ImageType.IMAGE_JPEG);
-                    result = saved ? "Image Saved" : "Image Not Saved";
-                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            == PackageManager.PERMISSION_GRANTED) {
+                        Log.v(TAG, "Permission is granted");
+                        save();
+
+                    } else {
+                        Log.v(TAG, "Permission is revoked");
+                        ActivityCompat.requestPermissions(GeneratorActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                    }
+                } else { //permission is automatically granted on sdk<23 upon installation
+                    Log.v(TAG, "Permission is granted");
+                    save();
                 }
             }
         });
@@ -94,5 +114,16 @@ public class GeneratorActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void save() {
+        ImagePath = MediaStore.Images.Media.insertImage(
+                getContentResolver(),
+                bitmap,
+                "demo_image",
+                "demo_image"
+        );
+        URI = Uri.parse(ImagePath);
+        Toast.makeText(GeneratorActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
     }
 }
