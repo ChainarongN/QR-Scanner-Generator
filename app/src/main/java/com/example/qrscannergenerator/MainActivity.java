@@ -31,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayShowHomeEnabled(true);
         // Check Permission for Camera
@@ -73,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_scanner:
                             selectedFragment = new ScannerFragment();
                             break;
-//                        case R.id.nav_rate_us:
-//                            selectedFragment = new RateUsFragment();
-//                            break;
+                        case R.id.nav_rate_us:
+                            selectedFragment = new RateUsFragment();
+                            break;
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
