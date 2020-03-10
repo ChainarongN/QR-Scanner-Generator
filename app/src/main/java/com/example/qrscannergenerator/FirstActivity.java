@@ -25,13 +25,6 @@ public class FirstActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-
-        VideoView videoView = (VideoView) findViewById(R.id.simpleVideoView);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
-        Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
-        videoView.start();
-
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
@@ -40,7 +33,7 @@ public class FirstActivity extends AppCompatActivity {
                         finish();
                     }
                 },
-                5000);
+                3000);
 
 
 //        MediaController mediaController = new MediaController(this);
