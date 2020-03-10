@@ -18,6 +18,7 @@ import com.example.qrscannergenerator.GeneratorActivity;
 import com.example.qrscannergenerator.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class EmailFragment extends Fragment {
@@ -25,7 +26,8 @@ public class EmailFragment extends Fragment {
     View v;
     EditText email, subject, text;
     Button btn_generate;
-    private AdView mAdView;
+    private AdView mAdView ,mAdView1;
+    private InterstitialAd interstitialAd;
 
     @Nullable
     @Override
@@ -34,9 +36,15 @@ public class EmailFragment extends Fragment {
         getActivity().setTitle("Email");
 
         mAdView = v.findViewById(R.id.adView);
-        MobileAds.initialize(getContext(),"ca-app-pub-8182151086528694~1250153017");
+        mAdView1 = v.findViewById(R.id.adView1);
+        MobileAds.initialize(getContext(), "ca-app-pub-8182151086528694~1250153017");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView1.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(getContext());
+        interstitialAd.setAdUnitId("ca-app-pub-8182151086528694/6093864704");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
 
         email = (EditText) v.findViewById(R.id.email);
         subject = (EditText) v.findViewById(R.id.subject);
@@ -63,6 +71,8 @@ public class EmailFragment extends Fragment {
                     Intent intent = new Intent(getContext(), GeneratorActivity.class);
                     intent.putExtra("Value", s.toString());
                     startActivity(intent);
+
+                    interstitialAd.show();
                 }
             }
         });

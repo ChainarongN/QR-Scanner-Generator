@@ -18,6 +18,7 @@ import com.example.qrscannergenerator.GeneratorActivity;
 import com.example.qrscannergenerator.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class ContactFragment extends Fragment {
@@ -26,7 +27,8 @@ public class ContactFragment extends Fragment {
     EditText name, nickname, phoneNumber, email, line_id, facebook;
     Button btn_generate;
 
-    private AdView mAdView;
+    private AdView mAdView ,mAdView1;
+    private InterstitialAd interstitialAd;
 
     @Nullable
     @Override
@@ -35,9 +37,15 @@ public class ContactFragment extends Fragment {
         getActivity().setTitle("Contact");
 
         mAdView = v.findViewById(R.id.adView);
+        mAdView1 = v.findViewById(R.id.adView1);
         MobileAds.initialize(getContext(),"ca-app-pub-8182151086528694~1250153017");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView1.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(getContext());
+        interstitialAd.setAdUnitId("ca-app-pub-8182151086528694/6093864704");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
 
         name = (EditText) v.findViewById(R.id.edt_name);
         nickname = (EditText) v.findViewById(R.id.edt_nickname);
@@ -76,6 +84,8 @@ public class ContactFragment extends Fragment {
                     Intent intent = new Intent(getContext(), GeneratorActivity.class);
                     intent.putExtra("Value", s.toString());
                     startActivity(intent);
+
+                    interstitialAd.show();
                 }
             }
         });

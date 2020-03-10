@@ -22,6 +22,7 @@ import com.example.qrscannergenerator.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class ProfileFragment extends Fragment {
@@ -31,6 +32,7 @@ public class ProfileFragment extends Fragment {
     Button btn_generate;
 
     private AdView mAdView;
+    private InterstitialAd interstitialAd;
 
     @Nullable
     @Override
@@ -42,6 +44,10 @@ public class ProfileFragment extends Fragment {
         MobileAds.initialize(getContext(),"ca-app-pub-8182151086528694~1250153017");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(getContext());
+        interstitialAd.setAdUnitId("ca-app-pub-8182151086528694/6093864704");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
 
         name = (EditText) v.findViewById(R.id.edt_name);
         nickname = (EditText) v.findViewById(R.id.edt_nickname);
@@ -84,6 +90,8 @@ public class ProfileFragment extends Fragment {
                     Intent intent = new Intent(getContext(), GeneratorActivity.class);
                     intent.putExtra("Value", s.toString());
                     startActivity(intent);
+
+                    interstitialAd.show();
                 }
             }
         });

@@ -119,8 +119,8 @@ public class GeneratorActivity extends AppCompatActivity {
         ImagePath = MediaStore.Images.Media.insertImage(
                 getContentResolver(),
                 bitmap,
-                "demo_image",
-                "demo_image"
+                "image_qrCode",
+                "image_qrCode"
         );
         URI = Uri.parse(ImagePath);
         Toast.makeText(GeneratorActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();

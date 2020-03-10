@@ -9,4 +9,9 @@
 
     <color name="color_white">#FDFEFE</color>
     <color name="color_black">#000000</color>
+
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+    <color name="graylight">#fafafa</color>
+
 </resources>

@@ -35,6 +35,10 @@ import androidx.fragment.app.Fragment;
 import com.example.qrscannergenerator.MainActivity;
 import com.example.qrscannergenerator.R;
 import com.example.qrscannergenerator.ScanCodeActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
 import com.google.zxing.DecodeHintType;
@@ -60,6 +64,7 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 public class ScannerFragment extends Fragment {
 
     View v;
+    private AdView mAdView;
     Button btn_share, btn_copy, btn_scanNew, btn_image;
 
     private static final int SELECT_PHOTO = 1000;
@@ -69,12 +74,30 @@ public class ScannerFragment extends Fragment {
     public static TextView result_qr;
     boolean check;
     public String barcode;
+    private InterstitialAd interstitialAd_share, interstitialAd_scan_img, interstitialAd_scan;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_scanner, container, false);
         getActivity().setTitle("Scanner");
+        mAdView = v.findViewById(R.id.adView);
+        MobileAds.initialize(getContext(), "ca-app-pub-8182151086528694~1250153017");
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        interstitialAd_share = new InterstitialAd(getContext());
+        interstitialAd_share.setAdUnitId("ca-app-pub-8182151086528694/7974633023");
+        interstitialAd_share.loadAd(new AdRequest.Builder().build());
+
+        interstitialAd_scan = new InterstitialAd(getContext());
+        interstitialAd_scan.setAdUnitId("ca-app-pub-8182151086528694/2395003282");
+        interstitialAd_scan.loadAd(new AdRequest.Builder().build());
+
+        interstitialAd_scan_img = new InterstitialAd(getContext());
+        interstitialAd_scan_img.setAdUnitId("ca-app-pub-8182151086528694/6629761766");
+        interstitialAd_scan_img.loadAd(new AdRequest.Builder().build());
+
         result_qr = (TextView) v.findViewById(R.id.result_qr);
         btn_scanNew = (Button) v.findViewById(R.id.btn_scanNew);
         btn_image = (Button) v.findViewById(R.id.btn_image);
@@ -96,6 +119,7 @@ public class ScannerFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 check = true;
+                interstitialAd_scan.show();
                 check_btn();
             }
 
@@ -163,6 +187,7 @@ public class ScannerFragment extends Fragment {
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                interstitialAd_share.show();
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, result_qr.getText().toString());
@@ -187,6 +212,7 @@ public class ScannerFragment extends Fragment {
     }
 
     private void pickImageFromGallery() {
+        interstitialAd_scan_img.show();
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, SELECT_PHOTO);

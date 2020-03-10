@@ -18,6 +18,7 @@ import com.example.qrscannergenerator.GeneratorActivity;
 import com.example.qrscannergenerator.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class BusinessFragment extends Fragment {
@@ -27,6 +28,7 @@ public class BusinessFragment extends Fragment {
     Button btn_generate;
 
     private AdView mAdView;
+    private InterstitialAd interstitialAd;
 
     @Nullable
     @Override
@@ -38,6 +40,10 @@ public class BusinessFragment extends Fragment {
         MobileAds.initialize(getContext(),"ca-app-pub-8182151086528694~1250153017");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(getContext());
+        interstitialAd.setAdUnitId("ca-app-pub-8182151086528694/6093864704");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
 
         businessName = (EditText) v.findViewById(R.id.b_name);
         businessType = (EditText) v.findViewById(R.id.b_type);
@@ -80,6 +86,8 @@ public class BusinessFragment extends Fragment {
                     Intent intent = new Intent(getContext(), GeneratorActivity.class);
                     intent.putExtra("Value", s.toString());
                     startActivity(intent);
+
+                    interstitialAd.show();
                 }
 
             }
