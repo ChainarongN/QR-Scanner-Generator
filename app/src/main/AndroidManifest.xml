@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.qrscannergenerator">
+    package="com.bestpro.qrscannergenerator">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,18 +25,26 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8182151086528694~1250153017" />
 
-        <activity android:name=".GeneratorActivity"></activity>
+        <activity
+            android:name="com.bestpro.qrscannergenerator.GeneratorActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
 
-        <activity android:name=".FirstActivity">
+        <activity android:name="com.bestpro.qrscannergenerator.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ScanCodeActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.bestpro.qrscannergenerator.ScanCodeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name="com.bestpro.qrscannergenerator.MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <!--            <intent-filter>-->
