@@ -72,6 +72,7 @@
                     android:src="@drawable/ic_share_24dp" />
 
                 <TextView
+                    android:id="@+id/share_url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/color_black"
@@ -97,6 +98,7 @@
                     android:src="@drawable/ic_stars_24dp" />
 
                 <TextView
+                    android:id="@+id/rate_us"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
