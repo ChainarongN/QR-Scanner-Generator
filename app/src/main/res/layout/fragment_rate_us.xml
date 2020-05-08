@@ -66,6 +66,7 @@
                 android:paddingLeft="25dp">
 
                 <ImageView
+                    android:id="@+id/share_url_img"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical"
@@ -91,6 +92,7 @@
                 android:paddingLeft="25dp">
 
                 <ImageView
+                    android:id="@+id/rate_us_img"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical"
@@ -105,7 +107,7 @@
                     android:paddingLeft="15dp"
                     android:layout_gravity="center_vertical"
                     android:paddingRight="15dp"
-                    android:text="Rate us 5 star" />
+                    android:text="Rate us" />
 
                 <ImageView
                     android:layout_width="18dp"
@@ -142,6 +144,7 @@
                 android:paddingLeft="25dp">
 
                 <ImageView
+                    android:id="@+id/permission_img"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical"

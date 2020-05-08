@@ -18,15 +18,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        app:itemIconSize="24dp"
         app:itemBackground="@color/bg_item"
+        app:itemHorizontalTranslationEnabled="true"
+        app:itemIconSize="24dp"
+
         app:itemIconTint="@color/bottom_nav_item_color"
-        app:itemTextAppearanceActive="@style/BottomNavigationView.TextAppearance.Active"
-        app:itemTextAppearanceInactive="@style/BottomNavigationView.TextAppearance.InActive"
         app:itemTextColor="@color/bottom_nav_item_color"
         app:labelVisibilityMode="auto"
-        app:itemHorizontalTranslationEnabled="true"
-        app:menu="@menu/bottom_navigation"
-        />
+        app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>
