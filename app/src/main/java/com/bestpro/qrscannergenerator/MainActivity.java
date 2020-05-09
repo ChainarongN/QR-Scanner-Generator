@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.bestpro.qrscannergenerator.MainFragment.HistoryFragment;
 import com.bestpro.qrscannergenerator.MainFragment.HomeFragment;
 import com.bestpro.qrscannergenerator.MainFragment.RateUsFragment;
 import com.bestpro.qrscannergenerator.MainFragment.ScannerFragment;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new ScannerFragment();
                             break;
                         case R.id.nav_history:
-                            selectedFragment = new RateUsFragment();
+                            selectedFragment = new HistoryFragment();
                             break;
                         case R.id.nav_rate_us:
                             selectedFragment = new RateUsFragment();

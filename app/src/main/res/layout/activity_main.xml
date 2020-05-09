@@ -22,6 +22,8 @@
         app:itemHorizontalTranslationEnabled="true"
         app:itemIconSize="24dp"
         app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.TextAppearance.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView.TextAppearance.InActive"
         app:itemTextColor="@color/bottom_nav_item_color"
         app:labelVisibilityMode="auto"
         app:menu="@menu/bottom_navigation" />

@@ -29,7 +29,7 @@ public class FirstActivity extends AppCompatActivity {
                         finish();
                     }
                 },
-                3000);
+                2000);
 
 
 //        MediaController mediaController = new MediaController(this);
