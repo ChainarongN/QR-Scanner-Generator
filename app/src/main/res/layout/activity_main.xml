@@ -21,7 +21,6 @@
         app:itemBackground="@color/bg_item"
         app:itemHorizontalTranslationEnabled="true"
         app:itemIconSize="24dp"
-
         app:itemIconTint="@color/bottom_nav_item_color"
         app:itemTextColor="@color/bottom_nav_item_color"
         app:labelVisibilityMode="auto"
