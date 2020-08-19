@@ -11,10 +11,10 @@
         android:icon="@drawable/qr_code"
         android:title="Scanner" />
 
-    <item
-        android:id="@+id/nav_history"
-        android:icon="@drawable/ic_history_24dp"
-        android:title="History" />
+<!--    <item-->
+<!--        android:id="@+id/nav_history"-->
+<!--        android:icon="@drawable/ic_history_24dp"-->
+<!--        android:title="History" />-->
 
     <item
         android:id="@+id/nav_rate_us"

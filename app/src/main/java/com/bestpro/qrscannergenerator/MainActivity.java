@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_scanner:
                             selectedFragment = new ScannerFragment();
                             break;
-                        case R.id.nav_history:
-                            selectedFragment = new HistoryFragment();
-                            break;
+//                        case R.id.nav_history:
+//                            selectedFragment = new HistoryFragment();
+//                            break;
                         case R.id.nav_rate_us:
                             selectedFragment = new RateUsFragment();
                             break;
